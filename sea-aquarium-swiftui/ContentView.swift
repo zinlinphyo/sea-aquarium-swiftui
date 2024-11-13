@@ -9,16 +9,30 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        TabView {
+            HomeView()
+                .tabItem {
+                    Image("ic_home")
+                    Text("Home")
+                }
+            
+            Text("Wallet")
+                .tabItem {
+                    Image(systemName: "wallet.pass.fill")
+                    Text("Wallet")
+                }
+            
+            Text("More")
+                .tabItem {
+                    Image("ic_more")
+                    Text("More")
+                }
         }
-        .padding()
     }
 }
 
-#Preview {
-    ContentView()
+struct ContentView_Previews: PreviewProvider {
+    static var previews: some View {
+        ContentView()
+    }
 }
